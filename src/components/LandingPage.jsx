@@ -9,7 +9,7 @@ const LandingPage = () => {
           <div style={{
             color: 'black', 
             fontSize: '48px', 
-            fontFamily: 'Oxygen Mono', 
+            fontFamily: 'Orbit', 
             fontWeight: 400, 
             wordWrap: 'break-word',
             display: 'flex',
@@ -18,19 +18,10 @@ const LandingPage = () => {
             gap: '12px',
             marginBottom: '16px'
           }}>
-            <img 
-              src="Group 1.jpg" 
-              alt="Eigenverse Logo" 
-              style={{
-                width: '24px', 
-                height: '24px', 
-                flexShrink: 0
-              }} 
-            />
             eigenverse 
           </div>
           <div style={{
-            color: 'black', 
+            color: '#8598AE', 
             fontSize: '16px', 
             fontFamily: 'Play', 
             fontWeight: 400, 
@@ -58,7 +49,7 @@ const LandingPage = () => {
               width: '110px',
               height: '60px',
               background: 'linear-gradient(90deg, #D1E4FD 0%, #D7E6F9 29%)',
-              border: '2px solid transparent',
+              border: '2px solid rgba(255, 255, 255, 0.6)',
               color: 'black',
               fontSize: '20px',
               fontFamily: 'Oxygen Mono',
@@ -67,7 +58,8 @@ const LandingPage = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              borderRadius: '4px'
             }}>
             learn
           </button>
@@ -84,7 +76,7 @@ const LandingPage = () => {
               width: '110px',
               height: '60px',
               background: 'linear-gradient(90deg, #D1E4FD 0%, #D7E6F9 29%)',
-              border: '2px solid transparent',
+              border: '2px solid rgba(255, 255, 255, 0.6)',
               color: 'black',
               fontSize: '20px',
               fontFamily: 'Oxygen Mono',
@@ -93,7 +85,8 @@ const LandingPage = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              borderRadius: '4px'
             }}>
             log in
           </button>
@@ -111,7 +104,7 @@ const LandingPage = () => {
           padding: '16px 24px',
           borderRadius: '8px'
         }}>
-          Most ML tutorials skip the math.<br />Most math texts skip the ML.<br />We connect the two.
+          Most ML tutorials skip the math.<br />Most math texts skip the ML.<br />Eigenverse connects the two.
         </div>
       </div>
     </div>
