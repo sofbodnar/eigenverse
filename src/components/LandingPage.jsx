@@ -14,10 +14,23 @@ const LandingPage = () => {
             wordWrap: 'break-word',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             gap: '12px',
+            paddingLeft: '0px',
+            marginLeft: '-50px',
             marginBottom: '16px'
           }}>
+            <img 
+              src="Screenshot 2025-08-31 at 15.00.15.png" 
+              alt="Eigenverse Logo" 
+              style={{
+                width: '55px', 
+                height: '55px', 
+                flexShrink: 0,
+                alignSelf: 'flex-end',
+                marginBottom: '-5px'
+              }} 
+            />
             eigenverse 
           </div>
           <div style={{
@@ -93,7 +106,7 @@ const LandingPage = () => {
         </div>
 
         <div style={{
-          color: 'black',
+          color: '#8598AE',
           fontSize: '16px',
           fontFamily: 'Play',
           fontWeight: 400,
@@ -106,6 +119,44 @@ const LandingPage = () => {
         }}>
           Most ML tutorials skip the math.<br />Most math texts skip the ML.<br />Eigenverse connects the two.
         </div>
+      </div>
+
+      <div style={{
+        position: 'absolute',
+        bottom: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        color: 'white',
+        fontSize: '16px',
+        fontFamily: 'Play',
+        fontWeight: 400,
+        textAlign: 'center'
+      }}>
+        made with <span style={{color: '#A2C5F4'}}>💙</span> by{' '}
+        <a 
+          href="https://www.linkedin.com/in/sofiia-bodnar/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onMouseEnter={(e) => {
+            e.target.style.color = '#A2C5F4';
+            e.target.style.transform = 'scale(1.05)';
+            e.target.style.textShadow = '0 0 8px rgba(162, 197, 244, 0.6)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.color = 'white';
+            e.target.style.transform = 'scale(1)';
+            e.target.style.textShadow = 'none';
+          }}
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+            transition: 'all 0.3s ease',
+            display: 'inline-block',
+            cursor: 'pointer'
+          }}
+        >
+          Sofia Bodnar
+        </a>
       </div>
     </div>
   );
