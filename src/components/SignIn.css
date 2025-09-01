@@ -1,0 +1,113 @@
+.signin-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #F8FBFE 0%, #E8F4FE 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.signin-container {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 400px;
+  width: 100%;
+}
+
+.signin-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signin-header h1 {
+  font-family: 'Orbit', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.signin-header p {
+  font-family: 'Play', sans-serif;
+  color: #666;
+  font-size: 16px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: 'Play', sans-serif;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 2px solid rgba(200, 220, 240, 0.5);
+  border-radius: 12px;
+  font-family: 'Play', sans-serif;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: rgba(160, 180, 220, 0.8);
+  background: rgba(255, 255, 255, 1);
+}
+
+.signin-button {
+  padding: 14px;
+  background: rgba(200, 220, 240, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  font-family: 'Play', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.signin-button:hover {
+  background: rgba(180, 200, 230, 0.7);
+  transform: translateY(-1px);
+}
+
+.signin-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signin-footer p {
+  font-family: 'Play', sans-serif;
+  color: #666;
+  font-size: 14px;
+}
+
+.signin-footer a {
+  color: #5A7DB8;
+  text-decoration: none;
+}
+
+.signin-footer a:hover {
+  text-decoration: underline;
+}
