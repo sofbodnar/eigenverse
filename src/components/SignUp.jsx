@@ -58,10 +58,7 @@ const SignUp = () => {
     
     if (Object.keys(newErrors).length === 0) {
       // Simple registration - in real app, send to backend
-      login({ 
-        email: formData.email, 
-        firstName: formData.firstName
-      });
+      login(formData.email, formData.password);
       navigate(from, { replace: true });
     } else {
       setErrors(newErrors);

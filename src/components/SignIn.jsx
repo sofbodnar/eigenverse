@@ -6,19 +6,33 @@ import './SignIn.css';
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || '/';
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simple authentication - in real app, validate with backend
-    if (email && password) {
-      login({ email });
+    setLoading(true);
+    setError('');
+    
+    const result = await login(email, password);
+    
+    if (result.success) {
       navigate(from, { replace: true });
+    } else {
+      // Show specific message for unconfirmed email
+      if (result.error.includes('Email not confirmed')) {
+        setError('Please check your email and click the confirmation link before signing in.');
+      } else {
+        setError(result.error);
+      }
     }
+    
+    setLoading(false);
   };
 
   return (
@@ -30,6 +44,19 @@ const SignIn = () => {
         </div>
         
         <form onSubmit={handleSubmit} className="signin-form">
+          {error && (
+            <div className="error-message" style={{
+              color: '#d63384',
+              backgroundColor: 'rgba(255, 100, 100, 0.1)',
+              padding: '12px',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              textAlign: 'center'
+            }}>
+              {error}
+            </div>
+          )}
+          
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -39,6 +66,7 @@ const SignIn = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email"
+              disabled={loading}
             />
           </div>
           
@@ -51,11 +79,12 @@ const SignIn = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Enter your password"
+              disabled={loading}
             />
           </div>
           
-          <button type="submit" className="signin-button">
-            Sign In
+          <button type="submit" className="signin-button" disabled={loading}>
+            {loading ? 'Signing In...' : 'Sign In'}
           </button>
         </form>
         

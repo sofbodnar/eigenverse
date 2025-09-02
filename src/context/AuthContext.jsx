@@ -13,26 +13,33 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const login = (userData) => {
+  const login = async (email, password) => {
+    // Simple mock login - just set as authenticated
+    setUser({ email });
     setIsAuthenticated(true);
-    setUser(userData);
+    return { success: true, user: { email } };
   };
 
-  const signup = (userData) => {
+  const signup = async (email, password) => {
+    // Simple mock signup - just set as authenticated
+    setUser({ email });
     setIsAuthenticated(true);
-    setUser(userData);
+    return { success: true, user: { email } };
   };
 
-  const logout = () => {
-    setIsAuthenticated(false);
+  const logout = async () => {
     setUser(null);
+    setIsAuthenticated(false);
+    return { success: true };
   };
 
   return (
     <AuthContext.Provider value={{
       isAuthenticated,
       user,
+      loading,
       login,
       signup,
       logout
