@@ -114,6 +114,15 @@
   font-family: 'Orbit', sans-serif;
 }
 
+.subtopic-title.emphasized {
+  text-decoration: underline;
+  text-decoration-color: #A2C5F4;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
 /* Scrollbar styling */
 .foundations-sidebar::-webkit-scrollbar {
   width: 6px;

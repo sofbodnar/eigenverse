@@ -16,55 +16,55 @@ const FoundationsSidebar = () => {
       ]
     },
     '1.2': {
-      title: 'Calculus',
+      title: 'Vector Norms & Similarity',
       subtopics: [
-        { id: '1.2.1', title: 'Differentiation' },
-        { id: '1.2.2', title: 'Gradients' },
-        { id: '1.2.3', title: 'Jacobians' },
-        { id: '1.2.4', title: 'Hessians' },
-        { id: '1.2.5', title: 'Chain Rule' }
+        { id: '1.2.1', title: 'Dot Product' },
+        { id: '1.2.2', title: 'Cosine Similarity' },
+        { id: '1.2.3', title: 'Chamfer Similarity' }
       ]
     },
     '1.3': {
-      title: 'Probability & Statistics',
+      title: 'Calculus',
       subtopics: [
-        { id: '1.3.1', title: 'Random Variables' },
-        { id: '1.3.2', title: 'Distributions' },
-        { id: '1.3.3', title: 'Expectation' },
-        { id: '1.3.4', title: 'Variance' },
-        { id: '1.3.5', title: 'Conditional Probability' }
+        { id: '1.3.1', title: 'Gradients' },
+        { id: '1.3.2', title: 'Chain Rule' },
+        { id: '1.3.3', title: 'Jacobians' },
+        { id: '1.3.4', title: 'Hessians' }
       ]
     },
     '1.4': {
-      title: 'Optimization',
+      title: 'Probability & Statistics',
       subtopics: [
-        { id: '1.4.1', title: 'Gradient Descent' },
-        { id: '1.4.2', title: 'Convexity' },
-        { id: '1.4.3', title: 'Lagrange Multipliers' }
+        { id: '1.4.1', title: 'Random Variables' },
+        { id: '1.4.2', title: 'Distributions' },
+        { id: '1.4.3', title: 'Expectation' },
+        { id: '1.4.4', title: 'Variance' }
       ]
     },
     '1.5': {
-      title: 'Information Theory',
+      title: 'Optimization',
       subtopics: [
-        { id: '1.5.1', title: 'Entropy' },
-        { id: '1.5.2', title: 'KL Divergence' },
-        { id: '1.5.3', title: 'Cross-entropy' }
+        { id: '1.5.1', title: 'Gradient Descent' },
+        { id: '1.5.2', title: 'Convexity' },
+        { id: '1.5.3', title: 'Lagrange Multipliers' }
       ]
     },
     '1.6': {
-      title: 'Numerical Methods',
+      title: 'Information Theory',
       subtopics: [
-        { id: '1.6.1', title: 'Approximation' },
-        { id: '1.6.2', title: 'Floating-point Errors' },
-        { id: '1.6.3', title: 'Iterative Methods' }
+        { id: '1.6.1', title: 'Entropy' },
+        { id: '1.6.2', title: 'KL Divergence' },
+        { id: '1.6.3', title: 'Cross-entropy' }
       ]
     },
     '1.7': {
-      title: 'MUVERA Additions',
+      title: 'Numerical Methods',
       subtopics: [
-        { id: '1.7.1', title: 'Vector Norms & Similarity (Chamfer similarity)' },
-        { id: '1.7.2', title: 'Random Projections (Johnson-Lindenstrauss lemma)' },
-        { id: '1.7.3', title: 'Locality-Sensitive Hashing (probabilistic bucketing)' }
+        { id: '1.7.1', title: 'Approximation' },
+        { id: '1.7.2', title: 'Floating-point Errors' },
+        { id: '1.7.3', title: 'Iterative Methods' },
+        { id: '1.7.4', title: 'Random Projections (Johnson-Lindenstrauss lemma)' },
+        { id: '1.7.5', title: 'Locality-Sensitive Hashing (probabilistic bucketing)' }
       ]
     }
   };
@@ -102,7 +102,9 @@ const FoundationsSidebar = () => {
                   <div key={subtopic.id} className="subtopic">
                     <span className="subtopic-arrow">→</span>
                     <span className="subtopic-number">{subtopic.id}</span>
-                    <span className="subtopic-title">{subtopic.title}</span>
+                    <span className={`subtopic-title ${subtopic.emphasized ? 'emphasized' : ''}`}>
+                      {subtopic.title}
+                    </span>
                   </div>
                 ))}
               </div>
