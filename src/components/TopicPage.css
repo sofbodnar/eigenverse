@@ -190,6 +190,25 @@
   transform: translateY(-2px);
 }
 
+/* Sidebar layout styles */
+.topic-page.with-sidebar {
+  display: flex;
+}
+
+.topic-content-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.topic-content-wrapper.with-sidebar-offset {
+  margin-left: 327px;
+}
+
+.topic-page.with-sidebar .topic-header {
+  left: 327px;
+}
+
+/* Mobile responsive styles for sidebar */
 @media (max-width: 768px) {
   .topic-hero h1 {
     font-size: 32px;
@@ -208,5 +227,13 @@
   .bookmark-button {
     width: 100%;
     max-width: 250px;
+  }
+  
+  .topic-content-wrapper.with-sidebar-offset {
+    margin-left: 280px;
+  }
+  
+  .topic-page.with-sidebar .topic-header {
+    left: 280px;
   }
 }

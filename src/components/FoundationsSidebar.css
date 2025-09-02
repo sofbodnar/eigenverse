@@ -1,0 +1,157 @@
+.foundations-sidebar {
+  width: 327px;
+  height: 100vh;
+  background: rgba(247, 249, 252, 0.95);
+  border-right: 0.5px solid rgb(115, 140, 158); /* Color from SwiftUI: 0.45, 0.55, 0.62 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  font-family: 'Orbit', sans-serif;
+}
+
+.sidebar-header {
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+  border-bottom: 0.5px solid rgb(115, 140, 158);
+}
+
+.sidebar-header h2 {
+  font-family: 'Orbit', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.sidebar-content {
+  padding: 20px 0;
+}
+
+.sidebar-section {
+  margin-bottom: 8px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Orbit', sans-serif;
+}
+
+.section-header:hover {
+  background-color: rgba(162, 197, 244, 0.1);
+}
+
+.section-number {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 8px;
+  min-width: 24px;
+  font-family: 'Orbit', sans-serif;
+}
+
+.section-title {
+  flex: 1;
+  color: #2c3e50;
+  font-weight: 400;
+  font-family: 'Orbit', sans-serif;
+}
+
+.expand-icon {
+  color: #8598AE;
+  font-size: 12px;
+  transition: transform 0.2s ease;
+  margin-left: 8px;
+  font-family: 'Orbit', sans-serif;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.subtopics {
+  background-color: rgba(240, 247, 254, 0.5);
+  border-left: 2px solid rgba(162, 197, 244, 0.3);
+  margin-left: 20px;
+}
+
+.subtopic {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 20px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  font-family: 'Orbit', sans-serif;
+}
+
+.subtopic:hover {
+  background-color: rgba(162, 197, 244, 0.15);
+}
+
+.subtopic-arrow {
+  color: #8598AE;
+  margin-right: 8px;
+  font-size: 12px;
+  font-family: 'Orbit', sans-serif;
+}
+
+.subtopic-number {
+  color: #6b8aa6;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Orbit', sans-serif;
+}
+
+.subtopic-title {
+  color: #5a6c7d;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Orbit', sans-serif;
+}
+
+/* Scrollbar styling */
+.foundations-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.foundations-sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.foundations-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(115, 140, 158, 0.3);
+  border-radius: 3px;
+}
+
+.foundations-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(115, 140, 158, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .foundations-sidebar {
+    width: 280px;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 20px;
+  }
+  
+  .section-number {
+    font-size: 14px;
+  }
+  
+  .section-title {
+    font-size: 14px;
+  }
+  
+  .subtopic-number,
+  .subtopic-title {
+    font-size: 13px;
+  }
+}

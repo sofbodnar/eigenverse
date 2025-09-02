@@ -160,7 +160,7 @@ const LandingPage = () => {
         <div style={{
           display: 'flex',
           gap: '40px',
-          marginBottom: '80px'
+          marginBottom: '40px'
         }}>
           <button 
             onClick={() => {
@@ -241,7 +241,8 @@ const LandingPage = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        marginTop: '-80px'
       }}>
         {/* Search Bar */}
         <div style={{ 

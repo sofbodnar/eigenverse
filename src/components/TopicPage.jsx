@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import FoundationsSidebar from './FoundationsSidebar';
 import './TopicPage.css';
 
 const TopicPage = () => {
@@ -129,46 +130,50 @@ const TopicPage = () => {
   };
 
   return (
-    <div className="topic-page">
-      <div className="topic-header">
-        <div className="header-controls">
-          <button onClick={() => navigate('/')} className="back-button">
-            ← Back to Home
-          </button>
-          <div className="user-controls">
-            <span>Welcome, {user?.email}</span>
-            <button onClick={handleLogout} className="logout-button">
-              Logout
+    <div className={`topic-page ${topic === 'foundations' ? 'with-sidebar' : ''}`}>
+      {topic === 'foundations' && <FoundationsSidebar />}
+      
+      <div className={`topic-content-wrapper ${topic === 'foundations' ? 'with-sidebar-offset' : ''}`}>
+        <div className="topic-header">
+          <div className="header-controls">
+            <button onClick={() => navigate('/')} className="back-button">
+              ← Back to Home
+            </button>
+            <div className="user-controls">
+              <span>Welcome, {user?.email}</span>
+              <button onClick={handleLogout} className="logout-button">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="topic-container">
+          <div className="topic-hero">
+            <h1>{currentTopic.title}</h1>
+            <p>{currentTopic.description}</p>
+          </div>
+
+          <div className="topic-content">
+            <h2>Learning Path</h2>
+            <div className="content-list">
+              {currentTopic.content.map((item, index) => (
+                <div key={index} className="content-item">
+                  <div className="item-number">{index + 1}</div>
+                  <div className="item-title">{item}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="topic-actions">
+            <button className="start-learning-button">
+              Start Learning
+            </button>
+            <button className="bookmark-button">
+              Bookmark Topic
             </button>
           </div>
-        </div>
-      </div>
-
-      <div className="topic-container">
-        <div className="topic-hero">
-          <h1>{currentTopic.title}</h1>
-          <p>{currentTopic.description}</p>
-        </div>
-
-        <div className="topic-content">
-          <h2>Learning Path</h2>
-          <div className="content-list">
-            {currentTopic.content.map((item, index) => (
-              <div key={index} className="content-item">
-                <div className="item-number">{index + 1}</div>
-                <div className="item-title">{item}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="topic-actions">
-          <button className="start-learning-button">
-            Start Learning
-          </button>
-          <button className="bookmark-button">
-            Bookmark Topic
-          </button>
         </div>
       </div>
     </div>
