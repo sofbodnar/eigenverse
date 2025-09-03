@@ -25,6 +25,15 @@
   margin: 0;
 }
 
+.sidebar-header .subtitle {
+  font-family: 'Orbit', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #8598AE;
+  margin: 4px 0 0 0;
+  font-style: italic;
+}
+
 .sidebar-content {
   padding: 20px 0;
 }

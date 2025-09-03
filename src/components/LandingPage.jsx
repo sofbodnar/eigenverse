@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+
+  // Save scroll position before navigation
+  const handleNavigateWithScroll = (path) => {
+    sessionStorage.setItem('landingPageScrollPosition', window.scrollY.toString());
+    navigate(path);
+  };
+
+  // Restore scroll position when returning to landing page
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem('landingPageScrollPosition');
+    if (savedScrollPosition) {
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScrollPosition));
+      }, 100); // Small delay to ensure page is loaded
+    }
+  }, []);
   return (
     <div className="landing-page">
       {/* User Profile Component in top right */}
@@ -39,7 +55,7 @@ const LandingPage = () => {
 
         {/* User Profile Button */}
         <div 
-          onClick={() => navigate('/signin')}
+          onClick={() => handleNavigateWithScroll('/signin')}
           style={{
             width: '117px',
             height: '47px',
@@ -175,7 +191,7 @@ const LandingPage = () => {
             learn
           </button>
           <button 
-            onClick={() => navigate('/signin')}
+            onClick={() => handleNavigateWithScroll('/signin')}
             onMouseEnter={(e) => {
               e.target.style.transform = 'scale(1.08)';
             }}
@@ -408,7 +424,7 @@ const LandingPage = () => {
               }}
               onClick={() => {
                 const topicUrl = topic.replace(/\s+/g, '-').replace(/&/g, '').toLowerCase();
-                navigate(`/topic/${topicUrl}`);
+                handleNavigateWithScroll(`/topic/${topicUrl}`);
               }}
             >
               <div style={{

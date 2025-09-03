@@ -66,6 +66,32 @@ const FoundationsSidebar = () => {
         { id: '1.7.4', title: 'Random Projections (Johnson-Lindenstrauss lemma)' },
         { id: '1.7.5', title: 'Locality-Sensitive Hashing (probabilistic bucketing)' }
       ]
+    },
+    '1.8': {
+      title: 'Linear Regression',
+      subtopics: [
+        { id: '1.8.1', title: 'Model Basics' },
+        { id: '1.8.2', title: 'Loss Function / Cost' },
+        { id: '1.8.3', title: 'Analytical Solution' },
+        { id: '1.8.4', title: 'Gradient Descent' },
+        { id: '1.8.5', title: 'Feature Scaling & Normalization' },
+        { id: '1.8.6', title: 'Evaluation Metrics' },
+        { id: '1.8.7', title: 'Regularization (Lasso & Ridge)' },
+        { id: '1.8.8', title: 'Extensions & Connections' }
+      ]
+    },
+    '1.9': {
+      title: 'Dimensionality Reduction',
+      subtopics: [
+        { id: '1.9.1', title: 'Introduction & Motivation' },
+        { id: '1.9.2', title: 'Principal Component Analysis (PCA)' },
+        { id: '1.9.3', title: 'Singular Value Decomposition (SVD)' },
+        { id: '1.9.4', title: 'Linear Discriminant Analysis (LDA)' },
+        { id: '1.9.5', title: 't-Distributed Stochastic Neighbor Embedding (t-SNE)' },
+        { id: '1.9.6', title: 'Uniform Manifold Approximation and Projection (UMAP)' },
+        { id: '1.9.7', title: 'Feature Selection vs Feature Extraction' },
+        { id: '1.9.8', title: 'Applications in Machine Learning' }
+      ]
     }
   };
 
@@ -80,6 +106,7 @@ const FoundationsSidebar = () => {
     <div className="foundations-sidebar">
       <div className="sidebar-header">
         <h2>Foundations</h2>
+        <p className="subtitle">easy stuff</p>
       </div>
       
       <div className="sidebar-content">

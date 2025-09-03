@@ -136,8 +136,8 @@ const TopicPage = () => {
       <div className={`topic-content-wrapper ${topic === 'foundations' ? 'with-sidebar-offset' : ''}`}>
         <div className="topic-header">
           <div className="header-controls">
-            <button onClick={() => navigate('/')} className="back-button">
-              ← Back to Home
+            <button onClick={() => navigate(-1)} className="back-button">
+              ← Go Back
             </button>
             <div className="user-controls">
               <span>Welcome, {user?.email}</span>
