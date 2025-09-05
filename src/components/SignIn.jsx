@@ -40,7 +40,7 @@ const SignIn = () => {
       <div className="signin-container">
         <div className="signin-header">
           <h1>Sign In to Eigenverse</h1>
-          <p>Access your personalized ML learning journey</p>
+          <p>Lock in and learn ML</p>
         </div>
         
         <form onSubmit={handleSubmit} className="signin-form">

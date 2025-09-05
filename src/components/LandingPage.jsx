@@ -158,7 +158,6 @@ const LandingPage = () => {
 
         <div style={{
           display: 'flex',
-          gap: '40px',
           marginBottom: '40px',
           justifyContent: 'center'
         }}>
@@ -189,32 +188,6 @@ const LandingPage = () => {
               borderRadius: '4px'
             }}>
             learn
-          </button>
-          <button 
-            onClick={() => handleNavigateWithScroll('/signin')}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.08)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-            }}
-            style={{
-              width: '110px',
-              height: '60px',
-              background: 'linear-gradient(90deg, #F8FBFE 0%, #F0F7FE 29%)',
-              border: '2px solid #BCD4F3',
-              color: 'black',
-              fontSize: '20px',
-              fontFamily: 'Oxygen Mono',
-              fontWeight: 400,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.2s ease',
-              borderRadius: '4px'
-            }}>
-            log in
           </button>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
@@ -13,25 +13,46 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  // Initialize auth state from localStorage on mount
+  useEffect(() => {
+    const savedUser = localStorage.getItem('eigenverse_user');
+    if (savedUser) {
+      try {
+        const parsedUser = JSON.parse(savedUser);
+        setUser(parsedUser);
+        setIsAuthenticated(true);
+      } catch (error) {
+        console.error('Error parsing saved user:', error);
+        localStorage.removeItem('eigenverse_user');
+      }
+    }
+    setLoading(false);
+  }, []);
 
   const login = async (email, password) => {
     // Simple mock login - just set as authenticated
-    setUser({ email });
+    const userData = { email };
+    setUser(userData);
     setIsAuthenticated(true);
-    return { success: true, user: { email } };
+    localStorage.setItem('eigenverse_user', JSON.stringify(userData));
+    return { success: true, user: userData };
   };
 
   const signup = async (email, password) => {
     // Simple mock signup - just set as authenticated
-    setUser({ email });
+    const userData = { email };
+    setUser(userData);
     setIsAuthenticated(true);
-    return { success: true, user: { email } };
+    localStorage.setItem('eigenverse_user', JSON.stringify(userData));
+    return { success: true, user: userData };
   };
 
   const logout = async () => {
     setUser(null);
     setIsAuthenticated(false);
+    localStorage.removeItem('eigenverse_user');
     return { success: true };
   };
 
