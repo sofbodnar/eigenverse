@@ -11,8 +11,7 @@ const FoundationsSidebar = ({ onToggle, onGoBack, onContentSelect }) => {
         { id: '1.1.1', title: 'Vectors' },
         { id: '1.1.2', title: 'Vector Databases' },
         { id: '1.1.3', title: 'Matrices' },
-        { id: '1.1.4', title: 'Eigenvalues/Eigenvectors' },
-        { id: '1.1.5', title: 'SVD' }
+        { id: '1.1.4', title: 'Eigenvalues/Eigenvectors' }
       ]
     },
     '1.2': {
@@ -84,21 +83,19 @@ const FoundationsSidebar = ({ onToggle, onGoBack, onContentSelect }) => {
         { id: '1.9.4', title: 'Gradient Descent' },
         { id: '1.9.5', title: 'Feature Scaling & Normalization' },
         { id: '1.9.6', title: 'Evaluation Metrics' },
-        { id: '1.9.7', title: 'Regularization (Lasso & Ridge)' },
-        { id: '1.9.8', title: 'Extensions & Connections' }
+        { id: '1.9.7', title: 'Regularization (Lasso & Ridge)' }
       ]
     },
     '1.10': {
       title: 'Dimensionality Reduction',
       subtopics: [
-        { id: '1.10.1', title: 'Introduction & Motivation' },
-        { id: '1.10.2', title: 'Principal Component Analysis (PCA)' },
-        { id: '1.10.3', title: 'Singular Value Decomposition (SVD)' },
-        { id: '1.10.4', title: 'Linear Discriminant Analysis (LDA)' },
-        { id: '1.10.5', title: 't-Distributed Stochastic Neighbor Embedding (t-SNE)' },
-        { id: '1.10.6', title: 'Uniform Manifold Approximation and Projection (UMAP)' },
-        { id: '1.10.7', title: 'Feature Selection vs Feature Extraction' },
-        { id: '1.10.8', title: 'Applications in Machine Learning' }
+        { id: '1.10.1', title: 'Principal Component Analysis (PCA)' },
+        { id: '1.10.2', title: 'Singular Value Decomposition (SVD)' },
+        { id: '1.10.3', title: 'Linear Discriminant Analysis (LDA)' },
+        { id: '1.10.4', title: 't-Distributed Stochastic Neighbor Embedding (t-SNE)' },
+        { id: '1.10.5', title: 'Uniform Manifold Approximation and Projection (UMAP)' },
+        { id: '1.10.6', title: 'Feature Selection vs Feature Extraction' },
+        { id: '1.10.7', title: 'Applications in Machine Learning' }
       ]
     }
   };
